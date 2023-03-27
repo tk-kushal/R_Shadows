@@ -1,0 +1,66 @@
+body{
+font-family: 'Comfortaa', cursive;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+margin:0;
+box-sizing: border-box;
+overflow-x: hidden;
+background-color: rgb(255, 255, 255);
+}
+.cards{
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.title{
+  text-align: center;
+  font-size: 80px;
+  color: lightcoral;
+  font-weight: bold;
+  margin: 10px 10px 20px 10px;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  width: 250px;
+  height: 300px;
+  border: 1px solid rgb(240, 128, 128);
+  padding:20px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 100px 30px;
+  transition: box-shadow 50ms;
+}
+.signin{
+  background-color: lightcoral;
+  width: fit-content;
+  margin: 20px;
+  padding: 15px 25px;
+  color:white;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  border-radius: 30px;
+  
+}
+
+.main-title {
+  font-size: 50px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 100px;
+  color: rgb(39, 82, 82);
+  text-shadow: 2px 2px orange;
+  font-weight: bold ;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  box-shadow: 3px 5px 10px rgba(161, 207, 227, 0.832);
+}
