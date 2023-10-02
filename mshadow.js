@@ -2,15 +2,20 @@ const shadowElements = document.getElementsByClassName('m-shadow')
 let shadowProperties = [];
 let mouseX, mouseY
 
-for(let i=0;i<shadowElements.length;i++){
-  let elmboxshadow = getComputedStyle(shadowElements[i]).boxShadow
-  let colorend = elmboxshadow.lastIndexOf(")")+1
-  let shadowColor = elmboxshadow.substring(0,colorend)
-  let posX = elmboxshadow.indexOf("x",colorend)
-  let posY = elmboxshadow.indexOf("x",posX+1);
-  let shadowBlur = elmboxshadow.substring(posY+1,elmboxshadow.indexOf("p",posY+1))
-  console.log(shadowBlur)
-  shadowProperties.push({color:shadowColor,blur:shadowBlur})
+function getElementPrpperties() {
+  shadowProperties = [];
+  for (let i = 0; i < shadowElements.length; i++) {
+    let elmboxshadow = getComputedStyle(shadowElements[i]).boxShadow;
+    let colorend = elmboxshadow.lastIndexOf(")") + 1;
+    let shadowColor = elmboxshadow.substring(0, colorend);
+    let posX = elmboxshadow.indexOf("x", colorend);
+    let posY = elmboxshadow.indexOf("x", posX + 1);
+    let shadowBlur = elmboxshadow.substring(
+      posY + 1,
+      elmboxshadow.indexOf("p", posY + 1)
+    );
+    shadowProperties.push({ color: shadowColor, blur: shadowBlur });
+  }
 }
 
 
@@ -34,6 +39,12 @@ function mShadows(
   verticalMovement = 10,
   horizontalMovement = 8,
 ) {
+  if (
+    !shadowProperties.length &&
+    document.getElementsByClassName("m-shadow")[0]
+  ) {
+    getElementPrpperties();
+  }
   for (let i = 0; i < shadowElements.length; i++) {
     let element = shadowElements[i].getBoundingClientRect()
     let normalizeY = pointerY - element.top - element.height / 2
